@@ -1,0 +1,17 @@
+.listElemt{
+    display: flex;
+    justify-content: center;
+    color: unset;
+    text-decoration: none;
+}
+
+.listElemt:hover{
+    cursor: pointer;
+    background-color: #c5e2f0;
+}
+
+.li{
+    width: 33%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}

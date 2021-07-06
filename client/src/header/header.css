@@ -1,0 +1,36 @@
+header{
+  background-color: rgb(21, 72, 168);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+h1{
+  margin: auto;
+}
+
+.homeLink{
+  font-size: .9em;
+  color: white;
+  text-decoration: none;
+}
+
+.allPastesLink{
+  position: absolute;
+  float: right;
+  top: auto;
+  right: 5%;
+  color: white;
+  text-decoration: none;
+  border: solid white 1px;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.allPastesLink:hover{
+  background-color: rgb(34, 111, 255);
+}

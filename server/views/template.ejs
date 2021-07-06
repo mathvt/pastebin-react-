@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<%- include('part/head') %>
+
+<script src="lib/codemirror.js"></script>
+<link rel="stylesheet" href="lib/codemirror.css">
+<script src="mode/javascript/javascript.js"></script>
+<script src="mode/clike/clike.js"></script>
+<script src="mode/python/python.js"></script>
+
+    <body>
+    <%- include('part/header') %>
+    <div class="mainBody">
+        <p><%= row.time %></p>
+            
+        <hr>
+        <div id="mainSaved"><pre><code id="language" class="<%= row.syntax %>"><%= row.content %></code></pre></div>
+        <hr>
+
+        <button class="copy" onclick="copy()" >Copy text</button>            
+    </div>
+
+
+        <script src='javascripts/templateScript.js'></script>
+    </body>
+
+</html>

@@ -1,0 +1,14 @@
+#mainText{
+    white-space: pre-line;
+    padding: 10px;
+}
+
+.copy{
+    margin-top: 15px;
+    padding: 5px;
+    font-size: inherit;
+}
+
+.CodeMirror{
+    height: max-content !important;
+}

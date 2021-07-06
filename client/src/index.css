@@ -1,0 +1,26 @@
+body{
+  font-size: 1.2em;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0px;
+  background-color: #DDDDDD;
+
+}
+
+
+.mainBody{
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 20px;
+  padding-top: 75px;
+  background-color: white;
+  border: solid #DDDDDD 1px;
+  border-radius: 10px;
+}
+
+.hr{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #DDDDDD;
+  border: none;
+  height: 2px;
+}
