@@ -7,7 +7,7 @@ const { listPaste } = require('../sql/sql')
 router.get('/', async function(req, res) {
   let list = await listPaste()
   let time = Date.now()
-  list = list.filter((row) => row.timeOfExpiration > time || row.timeOfExpiration === null)
+  list = list.filter((row) => row.timeofexpiration > time || row.timeofexpiration === null)
   res.json(list)
   })
 

@@ -8,7 +8,7 @@ import SelectTime from './components/select_expiration'
 function Home(props){
     const [time, setTime] = React.useState('never')
     const [syntax, setSyntax] = React.useState(null);
-    const [mainTxt, setMainTxt] = React.useState('C');
+    const [mainTxt, setMainTxt] = React.useState('');
     
 
     return(
@@ -68,12 +68,15 @@ function Home(props){
             let hash = await res.text()
             if(hash === '0'){
                 
-                document.getElementById('main').placeholder = 'Please write here !!'
+                //('Please write here !!')
                 return
             }
             window.location.href = '/' + hash
         }
     }
+
+
+
     function getValue(main, syntax, time){
         return {
             main: main.value,
