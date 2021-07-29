@@ -9,7 +9,7 @@ function ShowPaste(props){
     const [data, setData] = React.useState(null);
     
     useEffect(() =>{
-        fetch(props.path)
+        fetch(window.location)
         .then((res) => res.json())
         .then((res) => setData(res))
         .catch((res) => setData(undefined))

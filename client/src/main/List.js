@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import './list.css'
 
 function List(props){
-    const [pasteList, setPasteList] = React.useState([]);
+    const [pasteList, setPasteList] = React.useState(null);
 
     useEffect(() =>{
         fetch('list')
@@ -10,10 +10,15 @@ function List(props){
         .then((res) => setPasteList(res))
     },[props.path])
 
+
     document.title = 'list'
+
     return(
         <div className="mainBody flex-col" id="pastesList">
-            {pasteList ? pasteList.map(e => {
+            {console.log(pasteList)}
+            {!pasteList ? <p>Loading</p> : 
+            pasteList === [] ? <p>Empty</p> :
+            pasteList.map(e => {
                 return(
                     <div onClick={() => window.open('/'+e.hash, "_blank")} className="listElemt" key={e.hash}>
                         <p className="li">{e.name}</p>
@@ -21,7 +26,7 @@ function List(props){
                         <p className="li">{e.time}</p>
                     </div>
                 )})
-                : <p>loading</p>}
+            }
         </div>
     )
 }
