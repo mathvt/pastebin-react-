@@ -9,6 +9,6 @@
     font-size: inherit;
 }
 
-.CodeMirror{
+.maxiheight > .react-codemirror2 > .CodeMirror{
     height: max-content !important;
 }

@@ -29,9 +29,12 @@ hr{
     padding: 10px;
 
     outline: none;
-    height: auto;
+    height: 250px;
 }
 
+.CodeMirror-scroll{
+    cursor: text;
+}
 
 .pasteBorder > .react-codemirror2 > .CodeMirror{
     border: solid #CCCCCC 2px;

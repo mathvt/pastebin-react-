@@ -7,8 +7,9 @@ import SelectTime from './components/select_expiration'
 
 function Home(props){
     const [time, setTime] = React.useState('never')
-    const [syntax, setSyntax] = React.useState(null);
-    const [mainTxt, setMainTxt] = React.useState('');
+    const [syntax, setSyntax] = React.useState(null)
+    const [mainTxt, setMainTxt] = React.useState('')
+    const [err, setErr] = React.useState()
     
 
     return(
@@ -16,7 +17,7 @@ function Home(props){
         <p>New Paste</p>
 
         <div className='pasteBorder'>
-            <Code syntax={syntax} setSyntax={setSyntax} setMainTxt={setMainTxt} />
+            <Code syntax={syntax} setSyntax={setSyntax} setMainTxt={setMainTxt} err={err} setErr={setErr} />
         </div>
         
         <div className='hr'></div>
@@ -56,6 +57,9 @@ function Home(props){
 
     async function sendRequest(){
         const info = getValue(mainTxt, syntax, time)
+        if (info.main === 'Please write here !!'){
+            return
+        }
         const res = await fetch('/',{
             method: 'Post',
             headers: {
@@ -67,8 +71,8 @@ function Home(props){
         if (res.status === 200){
             let hash = await res.text()
             if(hash === '0'){
-                
-                //('Please write here !!')
+                setErr(undefined)
+                setErr('Please write here !!')
                 return
             }
             window.location.href = '/' + hash

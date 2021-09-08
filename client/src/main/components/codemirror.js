@@ -8,7 +8,7 @@ function Code(props){
 
   return(
     <CodeMirror
-      value={props?.content}
+      value={props?.content || props?.err}
       options={{
         mode: changeMode(props.syntax),
         readOnly: props.content ? 'nocursor' : false

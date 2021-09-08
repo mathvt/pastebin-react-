@@ -28,7 +28,9 @@ function ShowPaste(props){
             <div className='mainBody'>
                 <p>{data?.time}</p>
                 <div className='hr'></div>
-                <Code syntax={data?.syntax} content={data?.content} />
+                <div className={'maxiheight'}> 
+                    <Code  syntax={data?.syntax} content={data?.content} />
+                </div>
                 <div className='hr'></div>
                 <button className="copy" onClick={copy} >Copy text</button>
             </div>
