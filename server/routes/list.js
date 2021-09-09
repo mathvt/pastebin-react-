@@ -4,7 +4,7 @@ const { listPaste } = require('../sql/sql')
 
 
 
-router.get('/', async function(req, res) {
+router.patch('/', async function(req, res) {
   let list = await listPaste()
   let time = Date.now()
   list = list.filter((row) => row.timeofexpiration > time || row.timeofexpiration === null)

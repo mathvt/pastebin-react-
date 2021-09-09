@@ -1,18 +1,37 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import Header from './header/header';
-import Main from './main/Main'
+import './index.css'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Header />
-    <Main />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import Header from './header/header'
+import Home from './main/Home'
+import ShowPaste from './main/ShowPaste'
+import List from './main/List'
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+  } from "react-router-dom";
+
+
+
+ ReactDOM.render(
+    <React.StrictMode>
+      <Header />
+      <Router>
+            <Switch>
+            <Route exact path='/'>
+                <Home />
+            </Route>
+            <Route path='/list'>
+                <List />
+            </Route>
+            <Route path='/:hash'>
+                <ShowPaste />
+            </Route>
+            </Switch>
+        </Router>
+    </React.StrictMode>,
+    document.getElementById('root')
+  );

@@ -6,7 +6,7 @@ const config = {
   user: "mathieu",
   host: "localhost",
   database: 'pastebinDB',
-  password: "mdp",
+  password: "undefined",
   port: 5432
 }
 

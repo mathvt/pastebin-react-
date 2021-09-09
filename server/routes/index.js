@@ -2,15 +2,14 @@ let express = require('express');
 let router = express.Router();
 const crypto = require('crypto');
 const { insertPaste, searchPaste } = require('../sql/sql')
-const path = require('path')
 
 
-router.get('/', function(req, res) {
-  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-});
+/*router.get('/', function(req, res) {
+  res.sendFile(path.resolve(__dirname, '../../client/build', 'index.html'));
+});*/
 
 
-router.post('/', async function(req, res) {
+router.patch('/', async function(req, res) {
   const data = req.body
   if (!data.main){
     return res.send('0')
@@ -20,13 +19,12 @@ router.post('/', async function(req, res) {
     await insertPaste(data)
     .catch(err => err.errno !== 19 && console.error(err))
     // errno 19 = try to insert a hash already in the db
-    res.type('html')
-    res.send(data.hash)    
+    res.send(data.hash)
   }
 });
 
 
-router.get('/:id', async function(req, res) {
+router.patch('/:id', async function(req, res) {
   let hash = req.originalUrl.replace('/', '')
   let row = await searchPaste(hash)
   if(await row && (row.timeofexpiration > Date.now() || row.timeofexpiration === null)){

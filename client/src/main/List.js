@@ -5,7 +5,9 @@ function List(props){
     const [pasteList, setPasteList] = React.useState(null);
 
     useEffect(() =>{
-        fetch('list')
+        fetch('list',{
+            method: 'PATCH',
+            })
         .then((res) => res.json())
         .then((res) => setPasteList(res))
     },[props.path])

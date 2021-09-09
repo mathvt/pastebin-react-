@@ -61,7 +61,7 @@ function Home(props){
             return
         }
         const res = await fetch('/',{
-            method: 'Post',
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },
