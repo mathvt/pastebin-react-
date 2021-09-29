@@ -1,9 +1,9 @@
-# pastebin-react-
+# pastebin-react-  
 
-My last project!
+My last project!  
 
-A website like https://pastebin.com/
+A website like https://pastebin.com/  
 
-Front-end in react
-Back-end with node/express
-Database with prostgreSQL
+Front-end in react  
+Back-end with node/express  
+Database with prostgreSQL  
