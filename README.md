@@ -1,6 +1,5 @@
 # pastebin-react-  
 
-My last project!  
 
 A website like https://pastebin.com/  
 
